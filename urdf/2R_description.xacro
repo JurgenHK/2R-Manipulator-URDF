@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<!-- 
+  UNIVERSIDAD NACIONAL DE COLOMBIA
+  DEPARTAMENTO DE ING. MECANICA Y MECATRONICA
+  SEMILLERO DE ROBOTICA MOMENTUN
+  LABORATORIO / ROBOTICA 2020-1
+  PROF: PEDRO CARDENAS
+  
+  URDF ROBOT DESCRITION EXAMPLE FOR GAZEBO SIMULATION
+  AUTHOR: JURGEN KREJCI MUNOZ
+  ROBOT: 2R
+  VERSION: 1.0
+  -->
+
+<robot name="2R" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+  <!-- Include -->
+  <xacro:include filename="$(find 2R_Gazebo)/urdf/links_joints.xacro" />
+  <xacro:include filename="$(find 2R_Gazebo)/urdf/robot_parameters.xacro" />
+  <!-- END - Include -->
+
+  <!-- Robot description -->
+
+  <m_link_mesh name="${link_00_name}"
+    origin_xyz="0 0 0"
+    origin_rpy="0 0 0" 
+    meshfile="package://2R_Gazebo/CAD/Base.dae"
+    mass="0.00272"
+    ixx="0.00000006" ixy="0" ixz="0"
+    iyy="0.000000082" iyz="0"
+    izz="0.00000008"	
+  />
+
+  <m_joint name="${joint_01_name}" 
+    type="revolute"
+    axis_xyz="0 0 1"
+    origin_rpy="1.57 -1.57 0" origin_xyz="0 2 8.5"
+    parent="${link_00_name}" child="${link_01_name}"
+    limit_e="100" limit_l="-3.14" limit_u="3.14" limit_v="0.5" 
+  />
+
+  <m_link_mesh name="${link_01_name}"
+    origin_xyz="0 0 0"
+    origin_rpy="0 0 0" 
+    meshfile="package://2R_Gazebo/CAD/Link1.dae"
+    mass="0.002268"
+    ixx="0.0000000181" ixy="0" ixz="0"
+    iyy="0.000000125" iyz="0"
+    izz="0.000000127"	
+  />
+
+  <m_joint name="${joint_02_name}" 
+    type="revolute"
+    axis_xyz="0 0 1"
+    origin_rpy="0 0 0" origin_xyz="15 0 1"
+    parent="${link_01_name}" child="${link_02_name}"
+    limit_e="100" limit_l="-3.14" limit_u="3.14" limit_v="0.5" 
+  />
+
+  <m_link_mesh name="${link_02_name}"
+    origin_xyz="0 0 0"
+    origin_rpy="0 0 0" 
+    meshfile="package://2R_Gazebo/CAD/Link2.dae"
+    mass="0.002268"
+    ixx="0.0000000181" ixy="0" ixz="0"
+    iyy="0.000000125" iyz="0"
+    izz="0.000000127"	
+  />
+
+  <m_joint name="${joint_03_name}" 
+    type="prismatic"
+    axis_xyz="0 0 1"
+    origin_rpy="0 1.57 -1.57" origin_xyz="15.25 5 1"
+    parent="${link_02_name}" child="${link_03_name}"
+    limit_e="100" limit_l="0" limit_u="2" limit_v="0.5" 
+  />
+
+  <m_link_mesh name="${link_03_name}"
+    origin_xyz="0 0 0"
+    origin_rpy="0 0 0" 
+    meshfile="package://2R_Gazebo/CAD/Finger.dae"
+    mass="0.002268"
+    ixx="0.0000000181" ixy="0" ixz="0"
+    iyy="0.000000125" iyz="0"
+    izz="0.000000127"	
+  />
+
+  <m_joint_mimic name="${joint_04_name}" 
+    type="prismatic"
+    axis_xyz="0 0 1"
+    origin_rpy="0 -1.57 -1.57" origin_xyz="15.25 -5 1"
+    parent="${link_02_name}" child="${link_04_name}"
+    limit_e="100" limit_l="0" limit_u="2" limit_v="0.5"
+    mimic_joint="${joint_03_name}" m_multiplier="1" m_offset="0" 
+  />
+
+  <m_link_mesh name="${link_04_name}"
+    origin_xyz="0 0 0"
+    origin_rpy="0 0 0" 
+    meshfile="package://2R_Gazebo/CAD/Finger.dae"
+    mass="0.002268"
+    ixx="0.0000000181" ixy="0" ixz="0"
+    iyy="0.000000125" iyz="0"
+    izz="0.000000127"	
+  />
+
+  <create_noa name="NOA"
+    origin_xyz="20 0 0"
+    origin_rpy="-1.57 0 -1.57" 
+    parent="${link_02_name}"
+  />
+
+  <!-- END - Robot description -->
+
+</robot>
+
