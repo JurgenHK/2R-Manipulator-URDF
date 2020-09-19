@@ -3,7 +3,7 @@
 	<group ns="/2R_sim">
 
 		<!-- Robot Model -->
-        	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find 2R_Gazebo)/urdf/2R_description_gazebo.xacro'" />
+        	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find basic_2r_gazebo)/urdf/2r_description_gazebo.xacro'" />
 		<arg name="x" default="0"/>
 		<arg name="y" default="0"/>
 		<arg name="z" default="1"/>
@@ -13,7 +13,7 @@
 		      args="-urdf -param robot_description -model 2R -x $(arg x) -y $(arg y) -z $(arg z)" />
 
 		<!-- Load controllers -->
-        	<rosparam command="load" file="$(find 2R_Gazebo)/config/joints.yaml" />
+        	<rosparam command="load" file="$(find basic_2r_gazebo)/config/joints.yaml" />
         
 		<!-- Controllers -->
 		<node name="controller_spawner" pkg="controller_manager" type="spawner"

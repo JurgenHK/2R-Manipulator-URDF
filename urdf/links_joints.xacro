@@ -6,10 +6,13 @@
   LABORATORIO / ROBOTICA 2020-1
   PROF: PEDRO CARDENAS
   
-  MACROS FOR LINKS AND JOINTS - ROBOT DESCRITION
-  AUTHOR: JURGEN KREJCI MUNOZ
+  URDF ROBOT DESCRIPTION EXAMPLE FOR GAZEBO SIMULATION
+  AUTHOR: JURGEN H. KREJCI MUNOZ
+  ROBOT: 2R
   MAIL: jhkrejcim@unal.edu.co
   VERSION: 1.0
+  TESTED ON ROS NOETIC (UBUNTU 20.04.1 LTS)
+  https://github.com/JurgenHK/2R-Manipulator-URDF
   -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -72,16 +75,16 @@
         <geometry>
           <mesh filename="${meshfile}"/>
         </geometry>
-        <material name="light_black"/>
+       <!-- <material name="light_black"/> -->
       </visual>
     </link>
  </xacro:macro>
 
  <xacro:macro name="create_noa" params="name origin_rpy origin_xyz parent">
   <link name="${name}">
-    <visual>
+   <!-- <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
-    </visual>
+    </visual> -->
   </link>
   <joint name="Tool_${name}" type="fixed">
     <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
