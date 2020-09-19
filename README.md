@@ -2,7 +2,7 @@
 
 ## This is the basic 2R manipulator robot package for ROS URDF testing and Gazebo simulation testing 
 
-The package is ment to be used as a fast way to test a simple simulation in Gazebo and also provide a base reference for creating URDF models form sratch using Xacro (XML Macros). 
+The package is ment to be used as a fast way to test a simple simulation in Gazebo and also provide a base reference for creating URDF models form scratch using Xacro (XML Macros). 
 
 ![2R RVIZ](https://i.ibb.co/vxqcyXh/2R-RVIZ.png)
 
@@ -32,7 +32,7 @@ In addition the simulation will run on [Gazebo](http://gazebosim.org/) (simulati
 
 
 ## Installation
-To install this package clone the repository in your ROS workspace (usually `~/catkin_ws/`). Build the workspace and source the new files.
+To install this package clone the repository in your ROS workspace (usually `~/catkin_ws/src/`). Build the workspace and source the new files.
 
 ## Usage
 To use the URDF model for RViz visualization, use:
@@ -45,7 +45,7 @@ To simulate the model in Gazebo, first start a `roscore`, then in new shell init
 ```bash
 rosrun gazebo_ros gazebo  
 ```
-Finally in anothe shell, launch the model in the simulator:
+Finally in another shell, launch the model in the simulator:
 
 ```bash
 roslaunch basic_2r_gazebo spawn.launch 
@@ -57,7 +57,7 @@ roslaunch basic_2r_gazebo spawn.launch
 * **Jurgen Krejci** - [JurgenHK](https://github.com/JurgenHK) - Initial Work 
 
 ## Contributing
-Feel free to fork and clone this repo, this is the list of issues, fixes and other features that need a to be worked or reviewed: 
+Feel free to fork and clone this repo. This is the list of issues, fixes and other features that need a to be worked or reviewed: 
 
 - [ ] Review and modify `spawn.launch`, Gazebo and ROS should be initilized from the launch file
 - [ ] Test on ROS Melodic (Collect Issues and provide support)
