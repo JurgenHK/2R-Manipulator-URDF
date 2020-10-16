@@ -2,7 +2,6 @@
 <!-- 
   UNIVERSIDAD NACIONAL DE COLOMBIA
   DEPARTAMENTO DE ING. MECANICA Y MECATRONICA
-  SEMILLERO DE ROBOTICA MOMENTUN
   LABORATORIO / ROBOTICA 2020-1
   PROF: PEDRO CARDENAS
   
@@ -19,8 +18,8 @@
 
 
   <!-- Include-->
-  <xacro:include filename="$(find basic_basic_2r_gazebo)/urdf/links_joints.xacro" />
-  <xacro:include filename="$(find basic_basic_2r_gazebo)/urdf/robot_parameters.xacro" />
+  <xacro:include filename="$(find basic_2r_gazebo)/urdf/links_joints.xacro" />
+  <xacro:include filename="$(find basic_2r_gazebo)/urdf/robot_parameters.xacro" />
   <!-- END - Include -->
 
   <!-- Robot description -->
@@ -35,84 +34,84 @@
   <xacro:m_link_mesh name="${link_00_name}"
     origin_xyz="0 0 0"
     origin_rpy="0 0 0" 
-    meshfile="package://basic_2r_gazebo/CAD/Base.stl"
-    mass="1.024"
-    ixx="170.0" ixy="0" ixz="0"
-    iyy="170.0" iyz="0"
-    izz="170.0"	
+    meshfile="package://basic_2r_gazebo/meshes/Base.stl"
+    mass="1"
+    ixx="0.01" ixy="0" ixz="0"
+    iyy="0.01" iyz="0"
+    izz="0.01"	
   />
 
   <xacro:m_joint name="${joint_01_name}" 
     type="revolute"
     axis_xyz="0 0 1"
-    origin_rpy="1.57 -1.57 0" origin_xyz="0 2 8.5"
+    origin_rpy="1.57 -1.57 0" origin_xyz="0 0 0.85"
     parent="${link_00_name}" child="${link_01_name}"
-    limit_e="100" limit_l="-3.14" limit_u="3.14" limit_v="0.5" 
+    limit_e="10" limit_l="-3.14" limit_u="3.14" limit_v="5.0" 
   />
 
   <xacro:m_link_mesh name="${link_01_name}"
-    origin_xyz="0 0 0"
+    origin_xyz="0 0 -0.2"
     origin_rpy="0 0 0" 
-    meshfile="package://basic_2r_gazebo/CAD/Link1.stl"
-    mass="1.570"
-    ixx="130.0" ixy="0" ixz="0"
-    iyy="130.0" iyz="0"
-    izz="90.0"	
+    meshfile="package://basic_2r_gazebo/meshes/Link1.stl"
+    mass="1"
+    ixx="0.01" ixy="0" ixz="0"
+    iyy="0.01" iyz="0"
+    izz="0.01"	
   />
 
   <xacro:m_joint name="${joint_02_name}" 
     type="revolute"
     axis_xyz="0 0 1"
-    origin_rpy="0 0 0" origin_xyz="15 0 1"
+    origin_rpy="0 0 0" origin_xyz="1.5 0 0"
     parent="${link_01_name}" child="${link_02_name}"
-    limit_e="100" limit_l="-3.14" limit_u="3.14" limit_v="0.5" 
+    limit_e="10" limit_l="-3.14" limit_u="3.14" limit_v="5.0" 
   />
 
   <xacro:m_link_mesh name="${link_02_name}"
-    origin_xyz="0 0 0"
+    origin_xyz="0 0 -0.1"
     origin_rpy="0 0 0" 
-    meshfile="package://basic_2r_gazebo/CAD/Link2.stl"
-    mass="0.057"
-    ixx="12.0" ixy="0" ixz="0"
-    iyy="12.0" iyz="0"
-    izz="12.0"	
+    meshfile="package://basic_2r_gazebo/meshes/Link2.stl"
+    mass="1"
+    ixx="0.01" ixy="0" ixz="0"
+    iyy="0.01" iyz="0"
+    izz="0.01"	
   />
 
   <xacro:m_joint name="${joint_03_name}" 
     type="prismatic"
     axis_xyz="0 0 1"
-    origin_rpy="0 1.57 -1.57" origin_xyz="15.25 5 1"
+    origin_rpy="0 1.57 -1.57" origin_xyz="1.525 0.5 0"
     parent="${link_02_name}" child="${link_03_name}"
-    limit_e="100" limit_l="0" limit_u="2" limit_v="0.5" 
+    limit_e="10" limit_l="0" limit_u="0.2" limit_v="5.0" 
   />
 
   <xacro:m_link_mesh name="${link_03_name}"
     origin_xyz="0 0 0"
     origin_rpy="0 0 0" 
-    meshfile="package://basic_2r_gazebo/CAD/Finger.stl"
-    mass="0.018"
-    ixx="0.5" ixy="0" ixz="0"
-    iyy="0.5" iyz="0"
-    izz="0.5"	
+    meshfile="package://basic_2r_gazebo/meshes/Finger.stl"
+    mass="0.5"
+    ixx="0.01" ixy="0" ixz="0"
+    iyy="0.01" iyz="0"
+    izz="0.01"	
   />
 
   <xacro:m_joint_mimic name="${joint_04_name}" 
     type="prismatic"
     axis_xyz="0 0 1"
-    origin_rpy="0 -1.57 -1.57" origin_xyz="15.25 -5 1"
+    origin_rpy="0 -1.57 -1.57" origin_xyz="1.525 -0.5 0"
     parent="${link_02_name}" child="${link_04_name}"
-    limit_e="100" limit_l="0" limit_u="2" limit_v="0.5"
+    limit_e="10" limit_l="0" limit_u="0.2" limit_v="5.0"
     mimic_joint="${joint_03_name}" m_multiplier="1" m_offset="0" 
   />
 
   <xacro:m_link_mesh name="${link_04_name}"
     origin_xyz="0 0 0"
     origin_rpy="0 0 0" 
-    meshfile="package://basic_2r_gazebo/CAD/Finger.stl"
-    mass="0.018"
-    ixx="0.5" ixy="0" ixz="0"
-    iyy="0.5" iyz="0"
-    izz="0.5"	
+    meshfile="package://basic_2r_gazebo/meshes/Finger.stl"
+    mass="0.5"
+    ixx="0.01" ixy="0" ixz="0"
+    iyy="0.01" iyz="0"
+    izz="0.01"	
   />
 
   <!-- END - Robot description -->

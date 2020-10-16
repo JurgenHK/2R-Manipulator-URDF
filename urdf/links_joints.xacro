@@ -3,7 +3,6 @@
   UNIVERSIDAD NACIONAL DE COLOMBIA
   DEPARTAMENTO DE ING. MECANICA Y MECATRONICA
   SEMILLERO DE ROBOTICA MOMENTUN
-  LABORATORIO / ROBOTICA 2020-1
   PROF: PEDRO CARDENAS
   
   URDF ROBOT DESCRIPTION EXAMPLE FOR GAZEBO SIMULATION
@@ -27,10 +26,10 @@
 	<transmission name="trans_${name}">
 	      <type>transmission_interface/SimpleTransmission</type>
 	      <joint name="${name}">
-		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 	      </joint>
 	      <actuator name="motor_${name}">
-		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		<mechanicalReduction>1</mechanicalReduction>
 	      </actuator>
 	    </transmission>
@@ -48,10 +47,10 @@
 <transmission name="trans_${name}">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${name}">
-  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="motor_${name}">
-  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -67,17 +66,22 @@
       <collision>
         <origin rpy="${origin_rpy}" xyz="${origin_xyz}" />
         <geometry>
-          <mesh filename="${meshfile}"/>
+          <mesh filename="${meshfile}" scale="0.1 0.1 0.1"/>
         </geometry>
       </collision>
       <visual>
         <origin rpy="${origin_rpy}" xyz="${origin_xyz}" />
         <geometry>
-          <mesh filename="${meshfile}"/>
+          <mesh filename="${meshfile}" scale="0.1 0.1 0.1"/>
         </geometry>
-       <!-- <material name="light_black"/> -->
+        <material name="Cyan">
+          <color rgba="0 1.0 1.0 1.0"/>
+        </material>
       </visual>
     </link>
+    <gazebo reference="${name}">
+        <material>Gazebo/BlueGlow</material>
+    </gazebo>
  </xacro:macro>
 
  <xacro:macro name="create_noa" params="name origin_rpy origin_xyz parent">
