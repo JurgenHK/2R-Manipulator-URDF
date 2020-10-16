@@ -4,7 +4,7 @@
 
 The package is ment to be used as a fast way to test a simple simulation in Gazebo and also provide a base reference for creating URDF models form scratch using Xacro (XML Macros). 
 
-![2R RVIZ](https://i.ibb.co/vxqcyXh/2R-RVIZ.png)
+![2R Robot](https://i.ibb.co/vxqcyXh/2R-RVIZ.png)
 
 ## Prerequisites
 
@@ -40,16 +40,14 @@ To use the URDF model for RViz visualization, use:
 ```bash
 roslaunch basic_2r_gazebo rviz.launch 
 ```
-To simulate the model in Gazebo, first start a `roscore`, then in new shell initialize Gazebo:
+![2R_Rviz](https://i.ibb.co/fGsWMRX/2-R-Rviz-Window.png)
+
+To simulate the model in Gazebo, use:
 
 ```bash
-rosrun gazebo_ros gazebo  
+roslaunch basic_2r_gazebo 2r_gazebo.launch
 ```
-Finally in another shell, launch the model in the simulator:
-
-```bash
-roslaunch basic_2r_gazebo spawn.launch 
-```
+![2R_Gazebo](https://i.ibb.co/9GtXdRs/Screenshot-from-2020-10-16-00-56-32.png)
 
 
 ## Authors 
@@ -59,9 +57,9 @@ roslaunch basic_2r_gazebo spawn.launch
 ## Contributing
 Feel free to fork and clone this repo. This is the list of issues, fixes and other features that need a to be worked or reviewed: 
 
-- [ ] Review and modify `spawn.launch`, Gazebo and ROS should be initilized from the launch file
-- [ ] Test on ROS Melodic (Collect Issues and provide support)
-- [ ] Test on ROS Kinetic (Collect Issues and provide support)
+- [x] Review and modify `2r_gazebo.launch`, Gazebo and ROS should be initilized from the launch file
+- [x] Test on ROS Melodic (Collect Issues and provide support)
+- [x] Test on ROS Kinetic (Collect Issues and provide support)
 
 
 

@@ -9,12 +9,12 @@
   AUTHOR: JURGEN H. KREJCI MUNOZ
   ROBOT: 2R
   MAIL: jhkrejcim@unal.edu.co
-  VERSION: 1.0
+  VERSION: 1.1
   TESTED ON ROS NOETIC (UBUNTU 20.04.1 LTS)
   https://github.com/JurgenHK/2R-Manipulator-URDF
   -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:property name="link_00_name" value="base_link" />
+  <xacro:property name="link_00_name" value="robot_base" />
   <xacro:property name="link_01_name" value="link_01" />
   <xacro:property name="link_02_name" value="link_02" />
   <xacro:property name="link_03_name" value="finger_1" />

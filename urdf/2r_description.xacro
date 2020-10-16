@@ -9,7 +9,7 @@
   AUTHOR: JURGEN H. KREJCI MUNOZ
   ROBOT: 2R
   MAIL: jhkrejcim@unal.edu.co
-  VERSION: 1.0
+  VERSION: 1.1
   TESTED ON ROS NOETIC (UBUNTU 20.04.1 LTS)
   https://github.com/JurgenHK/2R-Manipulator-URDF
   -->
@@ -24,6 +24,15 @@
 
   <!-- Robot description -->
   
+  <link name="base_link">
+    
+  </link>
+
+  <joint name="joint_name" type="fixed">
+    <parent link="base_link"/>
+    <child link="${link_00_name}"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
 
   <xacro:m_link_mesh name="${link_00_name}"
     origin_xyz="0 0 0"
