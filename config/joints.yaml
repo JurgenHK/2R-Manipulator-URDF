@@ -9,9 +9,8 @@ joint1_position_controller:
 joint2_position_controller:
   type: position_controllers/JointPositionController
   joint: joint_2
-joint3_position_controller:
-  type: position_controllers/JointPositionController
-  joint: gripper_1
-joint4_position_controller:
-  type: position_controllers/JointPositionController
-  joint: gripper_2
+gripper_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+   - gripper_1
+   - gripper_2 
