@@ -36,9 +36,9 @@
     origin_rpy="0 0 0" 
     meshfile="package://basic_2r_gazebo/meshes/Base.stl"
     mass="1"
-    ixx="0.01" ixy="0" ixz="0"
-    iyy="0.01" iyz="0"
-    izz="0.01"	
+    ixx="0.001" ixy="0" ixz="0"
+    iyy="0.001" iyz="0"
+    izz="0.001"	
   />
 
   <xacro:m_joint name="${joint_01_name}" 
@@ -54,9 +54,9 @@
     origin_rpy="0 0 0" 
     meshfile="package://basic_2r_gazebo/meshes/Link1.stl"
     mass="1"
-    ixx="0.01" ixy="0" ixz="0"
-    iyy="0.01" iyz="0"
-    izz="0.01"	
+    ixx="0.001" ixy="0" ixz="0"
+    iyy="0.001" iyz="0"
+    izz="0.001"	
   />
 
   <xacro:m_joint name="${joint_02_name}" 
@@ -71,10 +71,10 @@
     origin_xyz="0 0 -0.1"
     origin_rpy="0 0 0" 
     meshfile="package://basic_2r_gazebo/meshes/Link2.stl"
-    mass="1"
-    ixx="0.01" ixy="0" ixz="0"
-    iyy="0.01" iyz="0"
-    izz="0.01"	
+    mass="0.5"
+    ixx="0.0007" ixy="0" ixz="0"
+    iyy="0.0007" iyz="0"
+    izz="0.0007"	
   />
 
   <xacro:m_joint name="${joint_03_name}" 
@@ -89,10 +89,10 @@
     origin_xyz="0 0 0"
     origin_rpy="0 0 0" 
     meshfile="package://basic_2r_gazebo/meshes/Finger.stl"
-    mass="0.5"
-    ixx="0.01" ixy="0" ixz="0"
-    iyy="0.01" iyz="0"
-    izz="0.01"	
+    mass="0.1"
+    ixx="0.0002" ixy="0" ixz="0"
+    iyy="0.0002" iyz="0"
+    izz="0.0002"	
   />
 
   <xacro:m_joint_mimic name="${joint_04_name}" 
@@ -108,10 +108,10 @@
     origin_xyz="0 0 0"
     origin_rpy="0 0 0" 
     meshfile="package://basic_2r_gazebo/meshes/Finger.stl"
-    mass="0.5"
-    ixx="0.01" ixy="0" ixz="0"
-    iyy="0.01" iyz="0"
-    izz="0.01"	
+    mass="0.1"
+    ixx="0.0001" ixy="0" ixz="0"
+    iyy="0.0001" iyz="0"
+    izz="0.0001"	
   />
 
   <!-- END - Robot description -->
