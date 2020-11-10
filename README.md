@@ -49,6 +49,12 @@ roslaunch basic_2r_gazebo 2r_gazebo.launch
 ```
 ![2R_Gazebo](https://i.ibb.co/9GtXdRs/Screenshot-from-2020-10-16-00-56-32.png)
 
+For double robots in Gazebo, use:
+
+```bash
+roslaunch basic_2r_gazebo double_2r_gazebo.launch
+```
+![2R_Gazebo_Double](https://i.ibb.co/HxyhLsZ/2r-gazebo-double.png)
 
 ## Authors 
 
